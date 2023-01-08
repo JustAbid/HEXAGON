@@ -6,13 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hextools</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
 
 </head>
 <body>
+    <!------navigation bar section------>
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo"><a href="#">Hextools</a></div>
+            
+            <div class="button">
+                 <a href="/subpages/submitreasource.html">submit resources</a>
+            </div>
+        </div>
+    </nav>
     <!----home tab start--->
     <section class="home" id="home">
         <div>
-            <div class="head">Hextools</div>
+            <div class="head">HEXTOOLS</div>
 
             <div class="container">
                     <span class="text first-text">Collection of free design tools and resources for </span>
@@ -33,35 +44,31 @@
                         text.textContent = "Makers";
                     }, 8000); //1s = 1000 milliseconds
                 }
-        
                 textLoad();
                 setInterval(textLoad, 12000);
             </script>    
-        
-        
-            
-    
         </div>    
     </section>
 
     <!---the data tab--->
     <section class="listofboxes">
         <div class="head">Tools and Resources</div>
+        <p>Find the tools you need in each category</p>
         <div class="max-width">
             <div class="list-content">
                 <div class="card">
-                    <a href="" target="_blank" style="color:#fff; ">  
+                    <a href="/subpages/grads.htm"  style="color:#fff; ">  
                         <div class="box">
-                            <i class=""></i>
-                            <div class="text">Invisibility Cloak</div>   
+                            <i class="fa fa-search"></i>
+                            <div class="text">GRADIENTS</div>   
                         </div>
                     </a>
                 </div>
                 <div class="card">
-                    <a href="" target="_blank" style="color:#fff; ">  
+                    <a href="/subpages/colos.htm" target="_blank" style="color:#fff; ">  
                         <div class="box">
-                            <i class=""></i>
-                            <div class="text">Invisibility Cloak</div> 
+                            <i class="fa-regular fa-image"></i>
+                            <div class="text">COLORS</div> 
                         </div>
                     </a>
                 </div>
@@ -436,5 +443,59 @@
             </div>     
         </div>
     </section>
+    <!--contact us section-->
+    <section class="contact" id="contact">
+        <div class="max-width">
+            <h2 class="title">Contact us</h2>
+            <div class="contact-content">
+               <div class="column left">
+                   <div class="text">Get in Touch</div>
+                   <p> For any queries or issues, please do contact us through the form.<br>Heartly thanking-you for visiting our website.</p>
+                   <div class="icons">
+                       <div class="row">
+                           <i class="fas fa-user"></i>
+                           <div class="info">
+                               <div class="head">Team Member Names:</div>
+                               <div class="sub-title">Ayan Khan</div>
+                               <div class="sub-title">Abid </div>
+                               <div class="sub-title">shoaib </div>
+                               <div class="sub-title">Faizan</div>
+                               <div class="sub-title">Mumaiz</div>
+                               <div class="sub-title">Gulam</div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <div class="column right">
+                   <div class="text">Message us</div>
+                   <form action="https://formspree.io/f/xknynbrq" method="post">
+                       <div class="fields">
+                           <div class="field name">
+                               <input type="text" id="name" name="name" placeholder="Name" required>
+                           </div>
+                           <div class="field email">
+                               <input type="email" id="emailaddress" name="emailaddress" placeholder="Email" required>
+                           </div> 
+                       </div> 
+                       <div class="field">
+                           <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                       </div>
+                       <div class="field textarea">
+                           <textarea cols="30" rows="10" id="message" name="message" placeholder="Describe project.." required></textarea>
+                       </div>
+                       <div class="button">
+                           <button type="submit">Send message</button>
+                       </div>
+                   </form>
+               </div>
+            </div>
+        </div>
+    </section>
+     <!---- footer section start ------>
+     <footer>
+        <span>Created By <a href="#">HEXAGON</a> With <span class="fa fa-heart"></span></span>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

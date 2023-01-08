@@ -10,16 +10,58 @@
 html{
     scroll-behavior: smooth;
 }
+/*nav bar*/
+.navbar{
+    background-color: black;
+    width: 100%;
+    z-index: 999;
+    padding: 10px 20px;
+    font-family: 'ubuntu',sans-serif; 
+    transition: all 0.3s ease;
+}
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a{
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+}
+.navbar .button {
+    background: linear-gradient(65deg,#5a51fe,#8751fe);
+    display: inline-flex;
+    font-size: 12px;
+    font-size: var(--font-xxs);
+    letter-spacing: 0;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+    text-decoration: none!important;
+    border: none;
+    border-radius: 2px;
+    justify-content: center;
+    padding: 12px 24px;
+    text-align: center;
+    white-space: nowrap;
+    box-shadow: 0 8px 24px rgb(32 43 54 / 12%);
+    transition: all .15s ease;
+    cursor: pointer;
+}
+.button a{
+    color: #FFF;
+}
 .home{
     background-color:black;
-    
     align-items: center;
     justify-content: center;
-    padding-top: 10%;
+    padding-top: 11%;
     padding-bottom: 10%;
 }
 .container{
-    width: 500px;
+    padding-top: 20px;
+    text-align: center;
     overflow: hidden;
 }
 .container .text{
@@ -34,13 +76,13 @@ html{
 .text.sec-text:before{
     content: "";
     position: absolute;
-    top: 0;
+    top: 20;
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: #000000;
+    background-color: black;
     border-left: 2px solid #483d8b;
-    animation: animate 4s steps(12) infinite;
+    
 }
 @keyframes animate{
     40%, 60%{
@@ -57,21 +99,23 @@ html{
     font-size: 40px;
 }
 .text{
-    color: white;
+    color: lightgray;
     text-align: center;
-    padding-top: 4px;
-    font-size: large;
-}
-.listofboxes{
-
-    padding-top: 50px;
-    background-color: lightslategrey;
+    padding-top: 20px;
+    font-size: x-large;
 }
 
 /*tools section*/
 .listofboxes{
+    padding-top: 50px;
     color: #fff;
-    background: #111;
+    background: #1e1f23;
+}
+.listofboxes p{
+    text-align: center;
+    font-size: 17px;
+    color: rgb(255, 255, 255);
+    padding-top: 7px;
 }
 .listofboxes .title::before{
     background: #fff;
@@ -88,31 +132,164 @@ html{
     justify-content: center;
 }
 .listofboxes .list-content .card{
-    width: 200px;
+
     background: #000;
     text-align: center;
-    border-radius: 6px;
+    border-radius: 4px;
     padding: 20px 20px;
     cursor: pointer;
     transition: all 0.3s ease;
     margin: 20px;
+    min-width: 320px;
+    height: 200px;
 }
 .listofboxes .list-content .card i{
-    font-size: 50px;
-    color: crimson;
+    font-size: 25px;
+    color: darkslateblue;
 }
 .listofboxes .list-content .card .text{
     margin: 10px 0 10px 0;
 }
-.listofboxes .list-content .card:hover i{
+.listofboxes .list-content .card:hover{
+    transform: translateY(-25px);
+    box-shadow: 0 40px 70px rgba(0,0,0,0.5);
+}
+
+/*  footer section styling  */
+footer{
+    background: black;
+    padding: 20px 23px;
+    color: #fff;
+    text-align: center;
+}
+footer span a{
+    color: crimson;
+    text-decoration: none;
+}
+footer span a:hover{
+    text-decoration: underline;
+}
+footer span .fa-heart{
+    color: crimson;
+}
+
+/*contact section*/
+.contact{
+    color: #fff;
+    background: #111;
+}
+.contact .contact-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.contact .title::before{
+    background: #fff;
+}
+.contact .title::after{
+    background: #111;
+    content: "get in touch";
+}
+.contact .contact-content .column{
+    width: calc(50% - 30px);
+}
+.contact .contact-content .text{
+    font-size: 20px;
+    font-weight: 100;
+    margin-bottom: 10px;
+    color: crimson;
+}
+.contact .contact-content .left p{
+    text-align: justify;
+}
+.contact .contact-content .left .icons{
+    margin: 10px 0;
+}
+.contact .contact-content .row{
+    display: flex;
+    height: 65px;
+    text-align: center;
+}
+.contact .contact-content .row .info{
+    margin-left: 30px;
+}
+.contact .contact-content .row i{
+    margin-top: 6px;
+    margin-left: 10px ;
+    font-size: 20px;
+    color: crimson;
+}
+.contact .contact-content .info .head{
+    font-weight: 300;
+    font-size: 25px;
+    text-align: justify;
     color: #fff;
 }
-.listofboxes .list-content .card:hover{
-    background: darkslateblue;
+.contact .contact-content .info .sub-title{
+    color: #fff;
+    font-size: 15px;
 }
-.listofboxes .list-content .card .box{
+.contact .right form .fields{
+    display: flex;
+    
+}
+.contact .contact-content .left{
+    margin-left: 15px;
+}
+.contact .contact-content .right{
+    margin-right: 10px;
+}
+.contact .right form .field,
+.contact .right form .fields .field{
+    height:45px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.contact .right form .field input,
+.contact .right form .textarea textarea{
+    height: 100%;
+    width: 100%;
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+    outline: none;
+    padding: 0 15px;
+    font-size: 17px;
+    font-family: 'Poppins',sans-serif;
+}
+.contact .right form .name{
+    margin-right: 10px;
+}
+.contact .right form .email{
+    margin-left: 10px;
+}
+.contact .right form .textarea{
+    height: 80px;
+    width: 100%;
+}
+.contact .right form .textarea textarea{
+    padding-top: 10px ;
+    resize: none;
+}
+.contact .right form .button{
+    height: 47px;
+    width: 170px;
+}
+.contact .right form .button button{
+    width: 100%;
+    height: 100%;
+    border: 2px solid crimson;
+    background: crimson;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
     transition: all 0.3s ease;
+    
 }
-.listofboxes .list-content .card:hover .box{
-    transform: scale(1.05);
+.contact .right form .button button:hover{
+    color: crimson;
+    background: none;
+
 }
