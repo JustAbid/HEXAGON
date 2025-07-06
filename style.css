@@ -52,44 +52,50 @@ html{
 .button a{
     color: #FFF;
 }
-.home{
-    background-color:black;
-    align-items: center;
-    justify-content: center;
-    padding-top: 11%;
-    padding-bottom: 10%;
-}
-.container{
-    padding-top: 20px;
-    text-align: center;
-    overflow: hidden;
-}
-.container .text{
-    position: relative;
-    color: #483d8b;
-    font-size: 25px;
-    font-weight: 600;
-}
-.container .text.first-text{
-    color: #FFF;
-}
-.text.sec-text:before{
-    content: "";
-    position: absolute;
-    top: 20;
-    left: 0;
-    height: 100%;
-    width: 100%;
+/* Typing animation */
+.home {
     background-color: black;
-    border-left: 2px solid #483d8b;
-    
+    padding: 10% 0;
+    text-align: center;
 }
-@keyframes animate{
-    40%, 60%{
-        left: calc(100% + 4px);
+
+.head {
+    color: darkslateblue;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.container {
+    font-size: 24px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.text.first-text {
+    color: white;
+}
+
+.text.sec-text {
+    display: inline-block;
+    color: #8751fe;
+    font-weight: bold;
+    position: relative;
+}
+
+.typing::after {
+    content: "|";
+    animation: blink 0.7s infinite;
+    color: #8751fe;
+    margin-left: 2px;
+}
+
+/* Blinking cursor animation */
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
     }
-    100%{
-        left: 0%;
+    50% {
+        opacity: 0;
     }
 }
 .head
