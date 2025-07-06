@@ -7,46 +7,28 @@
     <title>Hextools</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
-
 </head>
 <body>
-    <!------navigation bar section------>
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="max-width">
             <div class="logo"><a href="#">Hextools</a></div>
-            
             <div class="button">
-                 <a href="/subpages/submit.htm">submit resources</a>
+                <a href="/subpages/submit.htm">Submit Resources</a>
             </div>
         </div>
     </nav>
-    <!----home tab start--->
-    <section class="home" id="home">
-        <div>
-            <div class="head">HEXTOOLS</div>
 
-            <div class="container">
-                    <span class="text first-text">Collection of free design tools and resources for </span>
-                <span class="text sec-text">Designers</span>
-            </div>
+    <!-- Home Banner -->
+    <section class="home" id="home">
+        <div class="head">HEXTOOLS</div>
+        <div class="container">
+            <span class="text first-text">Collection of free design tools and resources for </span>
+            <span class="text sec-text"><span class="typing"></span></span>
+        </div>
+    </section>
         
-            <script>
-                const text = document.querySelector(".sec-text");
-        
-                const textLoad = () => {
-                    setTimeout(() => {
-                        text.textContent = "Designers";
-                    }, 0);
-                    setTimeout(() => {
-                        text.textContent = "Developers";
-                    }, 4000);
-                    setTimeout(() => {
-                        text.textContent = "Makers";
-                    }, 8000); //1s = 1000 milliseconds
-                }
-                textLoad();
-                setInterval(textLoad, 12000);
-            </script>    
+            
         </div>    
     </section>
 
@@ -57,7 +39,7 @@
         <div class="max-width">
             <div class="list-content">
                 <div class="card"> 
-                    <a href="/subpages/grads.htm"  style="color:#fff; ">  
+                    <a href="/gradients.htm"  style="color:#fff; ">  
                         <div class="box">
                             <i class="fa-light fa-rainbow"></i>
                             <div class="text">Gradients</div>   
@@ -65,7 +47,7 @@
                     </a>
                 </div>
                 <div class="card">
-                    <a href="/subpages/colors.htm"  style="color:#fff; ">  
+                    <a href="/colors.htm"  style="color:#fff; ">  
                         <div class="box">
                             <i class="fa-solid fa-droplet"></i>
                             <div class="text">Colors</div> 
@@ -491,8 +473,7 @@
             </div>
         </div>
     </section>
-     <!---- footer section start ------>
-     <footer>
+      <footer>
         <span>Created By <a href="#">HEXAGON</a> With <span class="fa fa-heart"></span></span>
     </footer>
 
