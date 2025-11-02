@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Style Guides | HEXTOOLS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+  <style>
+    :root {
+      --page-bg: #000;
+      --card-bg: #111;
+      --card-hover-bg: #1e1f23;
+      --muted: #bbb;
+      --accent: #8751fe;
+      --heading: darkslateblue;
+      --card-shadow: rgba(255,255,255,0.05);
+    }
+
+    html,body {
+      height:100%;
+      margin:0;
+      font-family:'Poppins',sans-serif;
+      background:var(--page-bg);
+      color:#fff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* navbar */
+    .navbar {
+      background-color:black;
+      padding:15px 30px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      box-shadow:0 1px 0 rgba(255,255,255,0.02);
+    }
+    .navbar a {
+      color:#fff;
+      text-decoration:none;
+      font-weight:600;
+      font-size:18px;
+    }
+
+    /* header */
+    .head {
+      text-align:center;
+      margin-top:32px;
+      font-size:38px;
+      color:var(--heading);
+    }
+    .subtitle {
+      text-align:center;
+      color:#aaa;
+      margin-top:8px;
+      font-size:16px;
+    }
+
+    /* grid */
+    .list-content {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      padding:36px 20px 80px 20px;
+      max-width:1200px;
+      margin:0 auto;
+    }
+
+    /* card */
+    .card {
+      background:var(--card-bg);
+      color:#fff;
+      border-radius:6px;
+      width:300px;
+      padding:28px 22px;
+      margin:14px;
+      transition:all 0.32s ease;
+      text-align:left;
+      box-shadow:0 0 10px var(--card-shadow);
+      text-decoration:none;
+      display:block;
+      cursor:pointer;
+    }
+    .card .tag {
+      display:inline-block;
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(135,81,254,0.12);
+      color:var(--accent);
+      font-weight:700;
+      margin-bottom:12px;
+    }
+    .card h3 {
+      margin:0 0 8px 0;
+      font-size:20px;
+      color:#fff;
+      letter-spacing:0.2px;
+    }
+    .card p {
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.45;
+    }
+    .card .meta {
+      margin-top:12px;
+      font-size:13px;
+      color:#9f9f9f;
+    }
+    .card:hover {
+      transform:translateY(-15px);
+      box-shadow:0 20px 50px rgba(0,0,0,0.5);
+      background:var(--card-hover-bg);
+    }
+
+    @media (max-width:740px){
+      .card { width:calc(100% - 40px); max-width:520px; }
+      .head { font-size:32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="/index.htm">&larr; Back</a>
+    <a href="/index.htm">HEXTOOLS</a>
+  </nav>
+
+  <div class="head">🎨 Style Guides</div>
+  <div class="subtitle">Curated design systems, brand style guides, and UI guidelines from top companies</div>
+
+  <div class="list-content">
+
+    <a class="card" href="https://www.apple.com/design/human-interface-guidelines/" target="_blank" rel="noopener">
+      <span class="tag">Official</span>
+      <h3>Apple Human Interface Guidelines</h3>
+      <p>Apple’s official design principles for iOS, macOS, watchOS, and tvOS — focus on clarity, depth, and deference.</p>
+      <div class="meta">UI/UX • iOS & macOS</div>
+    </a>
+
+    <a class="card" href="https://m3.material.io/" target="_blank" rel="noopener">
+      <span class="tag">Official</span>
+      <h3>Google Material Design 3</h3>
+      <p>Google’s design system for consistent, adaptive UIs — includes color, motion, typography, and accessibility guidelines.</p>
+      <div class="meta">Design System • Android & Web</div>
+    </a>
+
+    <a class="card" href="https://atlassian.design/" target="_blank" rel="noopener">
+      <span class="tag">Company</span>
+      <h3>Atlassian Design System</h3>
+      <p>Comprehensive guide on Atlassian’s product design philosophy with principles, patterns, and reusable components.</p>
+      <div class="meta">Enterprise • Consistency & Usability</div>
+    </a>
+
+    <a class="card" href="https://polaris.shopify.com/" target="_blank" rel="noopener">
+      <span class="tag">Company</span>
+      <h3>Shopify Polaris</h3>
+      <p>Shopify’s official style guide and design system — focuses on intuitive e-commerce experiences and brand consistency.</p>
+      <div class="meta">E-commerce • React components</div>
+    </a>
+
+    <a class="card" href="https://spectrum.adobe.com/" target="_blank" rel="noopener">
+      <span class="tag">Company</span>
+      <h3>Adobe Spectrum</h3>
+      <p>Adobe’s design system covering color, motion, components, and content strategy across Creative Cloud products.</p>
+      <div class="meta">Design System • Cross-product</div>
+    </a>
+
+    <a class="card" href="https://carbondesignsystem.com/" target="_blank" rel="noopener">
+      <span class="tag">Company</span>
+      <h3>IBM Carbon Design System</h3>
+      <p>IBM’s open-source design system emphasizing accessibility and modularity for web and enterprise solutions.</p>
+      <div class="meta">Enterprise • Accessibility-first</div>
+    </a>
+
+    <a class="card" href="https://primer.style/" target="_blank" rel="noopener">
+      <span class="tag">Company</span>
+      <h3>GitHub Primer</h3>
+      <p>GitHub’s design framework for product and web experiences — includes CSS utilities, components, and patterns.</p>
+      <div class="meta">Open-source • GitHub branding</div>
+    </a>
+
+    <a class="card" href="https://designsystem.digital.gov/" target="_blank" rel="noopener">
+      <span class="tag">Government</span>
+      <h3>US Web Design System</h3>
+      <p>Official U.S. government design system for accessible, consistent digital services across federal agencies.</p>
+      <div class="meta">Accessibility • Government sites</div>
+    </a>
+
+  </div>
+
+</body>
+</html>

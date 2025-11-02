@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Emojis | HEXTOOLS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+  <style>
+    :root {
+      --page-bg: #000;
+      --card-bg: #111;
+      --card-hover-bg: #1e1f23;
+      --muted: #bbb;
+      --accent: #8751fe;
+      --heading: darkslateblue;
+      --card-shadow: rgba(255,255,255,0.05);
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--page-bg);
+      color:#fff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* navbar */
+    .navbar{
+      background-color: black;
+      padding: 15px 30px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      box-shadow: 0 1px 0 rgba(255,255,255,0.02);
+    }
+    .navbar a{
+      color:#fff;
+      text-decoration:none;
+      font-weight:600;
+      font-size:18px;
+    }
+
+    /* header */
+    .head{
+      text-align:center;
+      margin-top:32px;
+      font-size:38px;
+      color: var(--heading);
+    }
+    .subtitle{
+      text-align:center;
+      color:#aaa;
+      margin-top:8px;
+      font-size:16px;
+    }
+
+    /* grid */
+    .list-content{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      padding:36px 20px 80px 20px;
+      max-width:1200px;
+      margin:0 auto;
+    }
+
+    /* card */
+    .card{
+      background: var(--card-bg);
+      color:#fff;
+      border-radius:6px;
+      width:300px;
+      padding:28px 22px;
+      margin:14px;
+      transition:all 0.32s ease;
+      text-align:left;
+      box-shadow: 0 0 10px var(--card-shadow);
+      text-decoration:none;
+      display:block;
+      cursor:pointer;
+    }
+    .card .tag {
+      display:inline-block;
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(135,81,254,0.12);
+      color:var(--accent);
+      font-weight:700;
+      margin-bottom:12px;
+    }
+    .card h3{
+      margin:0 0 8px 0;
+      font-size:20px;
+      color:#fff;
+      letter-spacing:0.2px;
+    }
+    .card p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.45;
+    }
+    .card .meta{
+      margin-top:12px;
+      font-size:13px;
+      color:#9f9f9f;
+    }
+
+    .card:hover{
+      transform:translateY(-15px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      background: var(--card-hover-bg);
+    }
+
+    /* responsive */
+    @media (max-width:740px){
+      .card { width: calc(100% - 40px); max-width:520px; }
+      .head { font-size:32px; }
+    }
+
+    /* small back link */
+    .back {
+      display:inline-block;
+      margin:18px 30px;
+      color:#9370DB;
+      text-decoration:none;
+      font-weight:600;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="/index.htm">&larr; Back</a>
+    <a href="/index.htm">HEXTOOLS</a>
+  </nav>
+
+  <div class="head">😊 Emojis</div>
+  <div class="subtitle">Fun and expressive emoji resources — browse collections and copy your favorites instantly</div>
+
+  <div class="list-content">
+
+    <a class="card" href="https://emojipedia.org/" target="_blank" rel="noopener">
+      <span class="tag">Comprehensive</span>
+      <h3>Emojipedia</h3>
+      <p>The ultimate emoji reference site — search every emoji, meaning, and Unicode version. Constantly updated.</p>
+      <div class="meta">Full emoji database • Meanings & history</div>
+    </a>
+
+    <a class="card" href="https://getemoji.com/" target="_blank" rel="noopener">
+      <span class="tag">Free</span>
+      <h3>GetEmoji</h3>
+      <p>Copy and paste emojis instantly into any app or site — quick, simple and ad-free interface.</p>
+      <div class="meta">Copy-paste tool • All emoji sets</div>
+    </a>
+
+    <a class="card" href="https://emoji.gg/" target="_blank" rel="noopener">
+      <span class="tag">Community</span>
+      <h3>Emoji.gg</h3>
+      <p>Large community-driven library of Discord and custom emojis — perfect for social media and servers.</p>
+      <div class="meta">Discord • Custom emojis</div>
+    </a>
+
+    <a class="card" href="https://copychar.cc/emoji" target="_blank" rel="noopener">
+      <span class="tag">Free</span>
+      <h3>CopyChar Emoji</h3>
+      <p>Simple site to copy any emoji or Unicode symbol — includes categories, search and favorites.</p>
+      <div class="meta">Unicode symbols • Emoji picker</div>
+    </a>
+
+    <a class="card" href="https://twemoji.twitter.com/" target="_blank" rel="noopener">
+      <span class="tag">Open Source</span>
+      <h3>Twemoji</h3>
+      <p>Twitter’s open-source emoji set — clean SVGs and PNGs you can embed or download for your own projects.</p>
+      <div class="meta">Open source • SVG emoji set</div>
+    </a>
+
+    <a class="card" href="https://fonts.google.com/noto/specimen/Noto+Color+Emoji" target="_blank" rel="noopener">
+      <span class="tag">Font</span>
+      <h3>Noto Color Emoji</h3>
+      <p>Google’s color emoji font used on Android and Chrome — downloadable and open for design projects.</p>
+      <div class="meta">Font • Cross-platform emoji</div>
+    </a>
+
+    <a class="card" href="https://icons8.com/emoji" target="_blank" rel="noopener">
+      <span class="tag">Creative</span>
+      <h3>Icons8 Emoji</h3>
+      <p>Professionally designed emoji illustrations in multiple styles — perfect for UI mockups or presentations.</p>
+      <div class="meta">Vector emojis • Various styles</div>
+    </a>
+
+    <a class="card" href="https://openmoji.org/" target="_blank" rel="noopener">
+      <span class="tag">Open Source</span>
+      <h3>OpenMoji</h3>
+      <p>Free and open-source emoji project offering consistent SVG and PNG downloads for all emojis.</p>
+      <div class="meta">Open source • SVG icons</div>
+    </a>
+
+  </div>
+
+</body>
+</html>

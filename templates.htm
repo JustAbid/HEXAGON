@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Templates | HEXTOOLS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+  <style>
+    /* page matches gradients/colors/fonts/logos style */
+    :root {
+      --page-bg: #000;
+      --card-bg: #111;
+      --card-hover-bg: #1e1f23;
+      --muted: #bbb;
+      --accent: #8751fe;
+      --heading: darkslateblue;
+      --card-shadow: rgba(255,255,255,0.05);
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--page-bg);
+      color:#fff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* navbar */
+    .navbar{
+      background-color: black;
+      padding: 15px 30px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      box-shadow: 0 1px 0 rgba(255,255,255,0.02);
+    }
+    .navbar a{
+      color:#fff;
+      text-decoration:none;
+      font-weight:600;
+      font-size:18px;
+    }
+
+    /* header */
+    .head{
+      text-align:center;
+      margin-top:32px;
+      font-size:38px;
+      color: var(--heading);
+    }
+    .subtitle{
+      text-align:center;
+      color:#aaa;
+      margin-top:8px;
+      font-size:16px;
+    }
+
+    /* grid */
+    .list-content{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      padding:36px 20px 80px 20px;
+      max-width:1200px;
+      margin:0 auto;
+    }
+
+    /* card */
+    .card{
+      background: var(--card-bg);
+      color:#fff;
+      border-radius:6px;
+      width:300px;
+      padding:28px 22px;
+      margin:14px;
+      transition:all 0.32s ease;
+      text-align:left;
+      box-shadow: 0 0 10px var(--card-shadow);
+      text-decoration:none;
+      display:block;
+      cursor:pointer;
+    }
+    .card .tag {
+      display:inline-block;
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(135,81,254,0.12);
+      color:var(--accent);
+      font-weight:700;
+      margin-bottom:12px;
+    }
+    .card h3{
+      margin:0 0 8px 0;
+      font-size:20px;
+      color:#fff;
+      letter-spacing:0.2px;
+    }
+    .card p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.45;
+    }
+    .card .meta{
+      margin-top:12px;
+      font-size:13px;
+      color:#9f9f9f;
+    }
+
+    .card:hover{
+      transform:translateY(-15px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      background: var(--card-hover-bg);
+    }
+
+    /* responsive */
+    @media (max-width:740px){
+      .card { width: calc(100% - 40px); max-width:520px; }
+      .head { font-size:32px; }
+    }
+
+    /* small back link */
+    .back {
+      display:inline-block;
+      margin:18px 30px;
+      color:#9370DB;
+      text-decoration:none;
+      font-weight:600;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="/index.htm">&larr; Back</a>
+    <a href="/index.htm">HEXTOOLS</a>
+  </nav>
+
+  <div class="head">📁 Templates</div>
+  <div class="subtitle">Curated website & UI template resources — click to visit the source</div>
+
+  <div class="list-content">
+
+    <a class="card" href="https://html5up.net/" target="_blank" rel="noopener">
+      <span class="tag">Free</span>
+      <h3>HTML5 UP</h3>
+      <p>Fully responsive HTML5 + CSS3 site templates, clean and easily customizable — great for landing pages and portfolios.</p>
+      <div class="meta">Static HTML templates • Good for quick prototypes</div>
+    </a>
+
+    <a class="card" href="https://startbootstrap.com/" target="_blank" rel="noopener">
+      <span class="tag">Free</span>
+      <h3>Start Bootstrap</h3>
+      <p>Bootstrap-based templates and themes for dashboards, landing pages, and business sites — easy to drop into projects.</p>
+      <div class="meta">Bootstrap • Ready components</div>
+    </a>
+
+    <a class="card" href="https://templated.co/" target="_blank" rel="noopener">
+      <span class="tag">Free</span>
+      <h3>Templated</h3>
+      <p>Large collection of free CSS/HTML site templates with permissive use — handy for small business and personal sites.</p>
+      <div class="meta">HTML/CSS • Simple licenses</div>
+    </a>
+
+    <a class="card" href="https://themeforest.net/" target="_blank" rel="noopener">
+      <span class="tag">Premium</span>
+      <h3>ThemeForest</h3>
+      <p>Massive marketplace for premium website templates — WordPress, HTML, React, and more. Good when you need production-ready themes.</p>
+      <div class="meta">Premium marketplace • Wide variety</div>
+    </a>
+
+    <a class="card" href="https://uideck.com/" target="_blank" rel="noopener">
+      <span class="tag">Free / Paid</span>
+      <h3>UIdeck</h3>
+      <p>Modern templates built with Bootstrap, Tailwind and other tools — a mix of free and premium options suitable for SaaS/product sites.</p>
+      <div class="meta">Bootstrap • Tailwind options</div>
+    </a>
+
+    <a class="card" href="https://bootstrapmade.com/" target="_blank" rel="noopener">
+      <span class="tag">Free / Paid</span>
+      <h3>BootstrapMade</h3>
+      <p>Beautiful Bootstrap templates for portfolios, businesses and landing pages. Easy to customize with Bootstrap utilities.</p>
+      <div class="meta">Bootstrap • Component-ready</div>
+    </a>
+
+    <a class="card" href="https://www.templatemonster.com/" target="_blank" rel="noopener">
+      <span class="tag">Premium</span>
+      <h3>TemplateMonster</h3>
+      <p>Huge selection of premium templates for CMSs and e-commerce platforms — themes, HTML templates and more.</p>
+      <div class="meta">Premium • CMS & e-commerce</div>
+    </a>
+
+    <a class="card" href="https://freefrontend.com/templates/" target="_blank" rel="noopener">
+      <span class="tag">Free</span>
+      <h3>FreeFrontend Templates</h3>
+      <p>Collection of modern free templates and components contributed by the community — great for inspiration and snippets.</p>
+      <div class="meta">HTML/CSS • Community curated</div>
+    </a>
+
+    <a class="card" href="https://tailwindui.com/" target="_blank" rel="noopener">
+      <span class="tag">Premium</span>
+      <h3>Tailwind UI</h3>
+      <p>High-quality, professionally designed UI components and templates built with Tailwind CSS — ideal for custom builds.</p>
+      <div class="meta">Tailwind • Component-driven</div>
+    </a>
+
+    <a class="card" href="https://www.creative-tim.com/" target="_blank" rel="noopener">
+      <span class="tag">Free / Paid</span>
+      <h3>Creative Tim</h3>
+      <p>Free and premium UI kits, admin dashboards and landing pages built with Bootstrap, React, Vue and Tailwind.</p>
+      <div class="meta">Multi-framework • Dashboards & kits</div>
+    </a>
+
+  </div>
+
+</body>
+</html>
