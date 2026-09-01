@@ -283,12 +283,16 @@ body{
     gap: 6px;
     flex: 0 0 auto;
     padding: 8px 16px;
+    border: none;
     border-radius: 999px;
     background: var(--bg-1);
     color: var(--text-muted);
+    font-family: inherit;
     font-size: 13.5px;
     font-weight: 600;
     white-space: nowrap;
+    cursor: pointer;
+    appearance: none;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 .category-chip:hover{
@@ -297,6 +301,10 @@ body{
 .category-chip.active{
     background: var(--accent);
     color: var(--text-on-accent);
+}
+.category-chip:focus-visible{
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
 }
 
 /* category sections + tool cards (data-driven, see assets/js/app.js) */

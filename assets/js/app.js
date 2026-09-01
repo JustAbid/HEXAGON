@@ -1,9 +1,10 @@
 /**
  * Renders the homepage tools directory from data/tools.js, using the
- * card-building helpers in assets/js/render.js: a jump-to-category nav
+ * card-building helpers in assets/js/render.js: a category filter/nav row
  * plus one <section> per category, each holding a heading and a grid of
- * tool cards. Also wires up scroll-spy so the nav highlights whichever
- * category is currently in view.
+ * tool cards. Filter-chip click handling and combining filters with search
+ * live in assets/js/search.js, which runs after this and reads the chips
+ * and sections rendered here.
  */
 document.addEventListener("DOMContentLoaded", () => {
   const grouped = groupByCategory(tools);
@@ -13,17 +14,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderCategoryNav(activeCategories);
   renderCategorySections(activeCategories, grouped);
-  observeCategorySections(activeCategories);
 });
 
 function renderCategoryNav(activeCategories) {
   const nav = document.getElementById("category-nav-list");
   if (!nav) return;
 
-  activeCategories.forEach((category, index) => {
-    const chip = document.createElement("a");
-    chip.className = "category-chip" + (index === 0 ? " active" : "");
-    chip.href = `#category-${category.id}`;
+  const allChip = document.createElement("button");
+  allChip.type = "button";
+  allChip.className = "category-chip active";
+  allChip.dataset.category = "all";
+  allChip.innerHTML = `<i class="fa-solid fa-border-all"></i> All`;
+  nav.appendChild(allChip);
+
+  activeCategories.forEach((category) => {
+    const chip = document.createElement("button");
+    chip.type = "button";
+    chip.className = "category-chip";
     chip.dataset.category = category.id;
     chip.innerHTML = `<i class="${category.icon}"></i> ${category.label}`;
     nav.appendChild(chip);
@@ -52,34 +59,4 @@ function renderCategorySections(activeCategories, grouped) {
 
     root.appendChild(section);
   });
-}
-
-/**
- * Highlights the nav chip for whichever category section is currently
- * crossing a thin band near the top of the viewport.
- */
-function observeCategorySections(activeCategories) {
-  if (typeof IntersectionObserver === "undefined") return;
-
-  const sections = activeCategories
-    .map((category) => document.getElementById(`category-${category.id}`))
-    .filter(Boolean);
-  if (!sections.length) return;
-
-  const setActiveChip = (categoryId) => {
-    document.querySelectorAll(".category-chip").forEach((chip) => {
-      chip.classList.toggle("active", chip.dataset.category === categoryId);
-    });
-  };
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) setActiveChip(entry.target.dataset.category);
-      });
-    },
-    { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
-  );
-
-  sections.forEach((section) => observer.observe(section));
 }
