@@ -1,5 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
 
+/* ---------- design tokens ---------- */
+:root{
+    /* light theme (default) */
+    --bg-1: #ffffff;
+    --bg-2: #f0eef7;
+    --bg-3: #fbfafd;
+    --text-primary: #1b1a24;
+    --text-muted: #5b5872;
+    --text-on-accent: #fff;
+    --accent: #8751fe;
+    --accent-soft: rgba(135, 81, 254, 0.14);
+    --accent-secondary: darkslateblue;
+    --accent-warm: crimson;
+    --accent-grad-1: #5a51fe;
+    --accent-grad-2: #8751fe;
+    --card-shadow: rgba(0, 0, 0, 0.08);
+    --card-shadow-hover: rgba(0, 0, 0, 0.18);
+}
+@media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+        --bg-1: #000000;
+        --bg-2: #1e1f23;
+        --bg-3: #111111;
+        --text-primary: #ffffff;
+        --text-muted: #bbbbbb;
+        --accent-soft: rgba(135, 81, 254, 0.12);
+        --card-shadow: rgba(255, 255, 255, 0.05);
+        --card-shadow-hover: rgba(0, 0, 0, 0.5);
+    }
+}
+:root[data-theme="dark"]{
+    --bg-1: #000000;
+    --bg-2: #1e1f23;
+    --bg-3: #111111;
+    --text-primary: #ffffff;
+    --text-muted: #bbbbbb;
+    --accent-soft: rgba(135, 81, 254, 0.12);
+    --card-shadow: rgba(255, 255, 255, 0.05);
+    --card-shadow-hover: rgba(0, 0, 0, 0.5);
+}
+@media (prefers-reduced-motion: reduce){
+    *, *::before, *::after{
+        transition: none !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -10,13 +57,18 @@
 html{
     scroll-behavior: smooth;
 }
+body{
+    background: var(--bg-1);
+    color: var(--text-primary);
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
 /*nav bar*/
 .navbar{
-    background-color: black;
+    background-color: var(--bg-1);
     width: 100%;
     z-index: 999;
     padding: 10px 20px;
-    font-family: 'ubuntu',sans-serif; 
+    font-family: 'ubuntu',sans-serif;
     transition: all 0.3s ease;
 }
 .navbar .max-width{
@@ -25,12 +77,38 @@ html{
     justify-content: space-between;
 }
 .navbar .logo a{
-    color: #fff;
+    color: var(--text-primary);
     font-size: 30px;
     font-weight: 600;
 }
+.navbar .nav-actions{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.theme-toggle{
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid var(--text-muted);
+    background: none;
+    color: var(--text-primary);
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.theme-toggle:hover{
+    background: var(--bg-2);
+}
+.theme-toggle:focus-visible{
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
 .navbar .button {
-    background: linear-gradient(65deg,#5a51fe,#8751fe);
+    background: linear-gradient(65deg, var(--accent-grad-1), var(--accent-grad-2));
     display: inline-flex;
     font-size: 12px;
     font-size: var(--font-xxs);
@@ -50,34 +128,35 @@ html{
     cursor: pointer;
 }
 .button a{
-    color: #FFF;
+    color: var(--text-on-accent);
 }
 /* Typing animation */
 .home {
-    background-color: black;
+    background-color: var(--bg-1);
     padding: 5% 0;
     text-align: center;
+    transition: background-color 0.25s ease;
 }
 
 .head {
-    color: darkslateblue;
+    color: var(--accent-secondary);
     font-size: 40px;
     margin-bottom: 10px;
 }
 
 .container {
     font-size: 24px;
-    color: white;
+    color: var(--text-primary);
     font-family: 'Poppins', sans-serif;
 }
 
 .text.first-text {
-    color: white;
+    color: var(--text-primary);
 }
 
 .text.sec-text {
     display: inline-block;
-    color: #8751fe;
+    color: var(--accent);
     font-weight: bold;
     position: relative;
 }
@@ -85,7 +164,7 @@ html{
 .typing::after {
     content: "|";
     animation: blink 0.7s infinite;
-    color: #8751fe;
+    color: var(--accent);
     margin-left: 2px;
 }
 
@@ -100,12 +179,12 @@ html{
 }
 .head
 {
-    color: darkslateblue;
+    color: var(--accent-secondary);
     text-align: center;
     font-size: 40px;
 }
 .text{
-    color: lightgray;
+    color: var(--text-muted);
     text-align: center;
     padding-top: 20px;
     font-size: x-large;
@@ -114,13 +193,14 @@ html{
 /*tools section*/
 .listofboxes{
     padding-top: 50px;
-    color: #fff;
-    background: #1e1f23;
+    color: var(--text-primary);
+    background: var(--bg-2);
+    transition: background-color 0.25s ease;
 }
 .listofboxes p{
     text-align: center;
     font-size: 17px;
-    color: rgb(255, 255, 255);
+    color: var(--text-primary);
     padding-top: 7px;
 }
 .listofboxes .title::before{
@@ -140,11 +220,11 @@ html{
 .category-title{
     font-size: 22px;
     font-weight: 600;
-    color: #fff;
+    color: var(--text-primary);
     margin-bottom: 18px;
 }
 .category-title i{
-    color: darkslateblue;
+    color: var(--accent-secondary);
     margin-right: 8px;
 }
 .tool-grid{
@@ -154,30 +234,30 @@ html{
 }
 .tool-card{
     display: block;
-    background: #000;
-    color: #fff;
+    background: var(--bg-1);
+    color: var(--text-primary);
     text-decoration: none;
     text-align: left;
     border-radius: 6px;
     padding: 26px 22px;
     width: 280px;
     transition: all 0.3s ease;
-    box-shadow: 0 0 10px rgba(255,255,255,0.05);
+    box-shadow: 0 0 10px var(--card-shadow);
 }
 .tool-card i{
     font-size: 22px;
-    color: darkslateblue;
+    color: var(--accent-secondary);
     display: block;
     margin-bottom: 10px;
 }
 .tool-card h3{
     font-size: 18px;
     margin: 0 0 8px;
-    color: #fff;
+    color: var(--text-primary);
 }
 .tool-card p{
     font-size: 14px;
-    color: #bbb;
+    color: var(--text-muted);
     text-align: left;
     padding-top: 0;
     margin: 0;
@@ -191,38 +271,40 @@ html{
     font-weight: 700;
     padding: 3px 9px;
     border-radius: 999px;
-    background: rgba(135,81,254,0.12);
-    color: #8751fe;
+    background: var(--accent-soft);
+    color: var(--accent);
     margin-right: 6px;
 }
 .tool-card:hover{
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-    background: #1e1f23;
+    box-shadow: 0 20px 40px var(--card-shadow-hover);
+    background: var(--bg-2);
 }
 
 /*  footer section styling  */
 footer{
-    background: black;
+    background: var(--bg-1);
     padding: 20px 23px;
-    color: #fff;
+    color: var(--text-primary);
     text-align: center;
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 footer span a{
-    color: crimson;
+    color: var(--accent-warm);
     text-decoration: none;
 }
 footer span a:hover{
     text-decoration: underline;
 }
 footer span .fa-heart{
-    color: crimson;
+    color: var(--accent-warm);
 }
 
 /*contact section*/
 .contact{
-    color: #fff;
-    background: #111;
+    color: var(--text-primary);
+    background: var(--bg-3);
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 .contact .contact-content{
     display: flex;
@@ -244,7 +326,7 @@ footer span .fa-heart{
     font-size: 20px;
     font-weight: 100;
     margin-bottom: 10px;
-    color: crimson;
+    color: var(--accent-warm);
 }
 .contact .contact-content .left p{
     text-align: justify;
@@ -264,16 +346,16 @@ footer span .fa-heart{
     margin-top: 6px;
     margin-left: 10px ;
     font-size: 20px;
-    color: crimson;
+    color: var(--accent-warm);
 }
 .contact .contact-content .info .head{
     font-weight: 300;
     font-size: 25px;
     text-align: justify;
-    color: #fff;
+    color: var(--text-primary);
 }
 .contact .contact-content .info .sub-title{
-    color: #fff;
+    color: var(--text-primary);
     font-size: 15px;
 }
 .contact .right form .fields{
@@ -324,18 +406,18 @@ footer span .fa-heart{
 .contact .right form .button button{
     width: 100%;
     height: 100%;
-    border: 2px solid crimson;
-    background: crimson;
-    color: #fff;
+    border: 2px solid var(--accent-warm);
+    background: var(--accent-warm);
+    color: var(--text-on-accent);
     font-size: 20px;
     font-weight: 500;
     border-radius: 6px;
     cursor: pointer;
     transition: all 0.3s ease;
-    
+
 }
 .contact .right form .button button:hover{
-    color: crimson;
+    color: var(--accent-warm);
     background: none;
 
 }

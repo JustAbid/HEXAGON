@@ -5,6 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hextools</title>
+    <script>
+      // Applied before first paint so a returning visitor's chosen theme
+      // shows immediately instead of flashing the system default first.
+      (function () {
+        try {
+          var stored = localStorage.getItem("hextools-theme");
+          if (stored === "light" || stored === "dark") {
+            document.documentElement.setAttribute("data-theme", stored);
+          }
+        } catch (e) {}
+      })();
+    </script>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
@@ -13,8 +25,13 @@
     <nav class="navbar">
         <div class="max-width">
             <div class="logo"><a href="#">Hextools</a></div>
-            <div class="button">
-                <a href="/subpages/submit.htm">Submit Resources</a>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark theme">
+                    <i class="fa-solid fa-moon" aria-hidden="true"></i>
+                </button>
+                <div class="button">
+                    <a href="/subpages/submit.htm">Submit Resources</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -91,6 +108,7 @@
     <script src="data/tools.js"></script>
     <script src="assets/js/render.js"></script>
     <script src="assets/js/app.js"></script>
+    <script src="assets/js/theme.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>
