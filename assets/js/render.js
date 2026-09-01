@@ -25,6 +25,9 @@ function createCard(tool) {
   card.href = tool.url;
   card.target = "_blank";
   card.rel = "noopener";
+  card.dataset.searchIndex = [tool.title, tool.description, ...(tool.tags || [])]
+    .join(" ")
+    .toLowerCase();
 
   const icon = document.createElement("i");
   icon.className = resolveIcon(tool);

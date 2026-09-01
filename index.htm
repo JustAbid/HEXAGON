@@ -49,11 +49,16 @@
     <section class="listofboxes" id="directory">
         <div class="head">Tools and Resources</div>
         <p>Find the tools you need in each category</p>
+        <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            <input type="search" id="tool-search" placeholder="Search tools by name, description, or tag&hellip;" aria-label="Search tools">
+        </div>
         <nav class="category-nav" aria-label="Jump to category">
             <div class="category-nav-inner" id="category-nav-list"><!-- populated by assets/js/app.js --></div>
         </nav>
         <div class="max-width">
             <div id="tool-categories"><!-- populated by assets/js/app.js from data/tools.js --></div>
+            <p id="search-empty-state" class="search-empty" hidden>No tools match your search.</p>
         </div>
     </section>
     <!--contact us section-->
@@ -111,6 +116,7 @@
     <script src="data/tools.js"></script>
     <script src="assets/js/render.js"></script>
     <script src="assets/js/app.js"></script>
+    <script src="assets/js/search.js"></script>
     <script src="assets/js/theme.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
