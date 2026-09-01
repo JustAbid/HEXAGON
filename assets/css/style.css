@@ -1,56 +1,56 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-/* ---------- design tokens ---------- */
+/* ---------- design tokens ----------
+   A minimal, neutral "productivity tool" palette: a soft gray page canvas
+   with white (or near-black, in dark mode) elevated surfaces, a single
+   indigo accent used consistently everywhere color is needed, and hairline
+   borders — not per-section background changes — to separate areas of the
+   page. Modeled after Linear/Vercel-style design systems. */
 :root{
     /* light theme (default) */
-    --bg-1: #ffffff;
-    --bg-2: #f0eef7;
-    --bg-3: #fbfafd;
-    --text-primary: #1b1a24;
-    --text-muted: #5b5872;
-    --text-on-accent: #fff;
-    --accent: #8751fe;
-    --accent-soft: rgba(135, 81, 254, 0.14);
-    --accent-secondary: darkslateblue;
-    --accent-warm: crimson;
-    --accent-warm-text: crimson;
-    --tag-text: #5c33cc;
-    --accent-grad-1: #5a51fe;
-    --accent-grad-2: #8751fe;
-    --card-shadow: rgba(0, 0, 0, 0.08);
-    --card-shadow-hover: rgba(0, 0, 0, 0.18);
+    --bg-page: #f7f7f8;
+    --bg-surface: #ffffff;
+    --bg-surface-hover: #f0f0f2;
+    --text-primary: #17181c;
+    --text-muted: #6b6d76;
+    --text-on-accent: #ffffff;
+    --accent: #4f46e5;
+    --accent-soft: rgba(79, 70, 229, 0.10);
+    --border: #e4e4e7;
+    --shadow: rgba(15, 15, 20, 0.05);
+    --shadow-hover: rgba(15, 15, 20, 0.12);
 }
-/* accent-secondary, accent-warm-text and tag-text are re-tuned (not just
-   reused) for dark backgrounds — the light-theme values measured well
-   under WCAG AA contrast against near-black surfaces. See the Day 12
-   contrast audit. */
+/* Dark mode doesn't just invert light-mode values — the accent is shifted a
+   step lighter (indigo-400 rather than indigo-600) for legibility against
+   near-black, and button text switches to dark ink rather than white,
+   since white-on-light-indigo fails contrast. See the Day 16 palette audit. */
 @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
-        --bg-1: #000000;
-        --bg-2: #1e1f23;
-        --bg-3: #111111;
-        --text-primary: #ffffff;
-        --text-muted: #bbbbbb;
-        --accent-secondary: #9b8cff;
-        --accent-warm-text: #ff5c7a;
-        --tag-text: #9b8cff;
-        --accent-soft: rgba(135, 81, 254, 0.12);
-        --card-shadow: rgba(255, 255, 255, 0.05);
-        --card-shadow-hover: rgba(0, 0, 0, 0.5);
+        --bg-page: #0e0e10;
+        --bg-surface: #18181b;
+        --bg-surface-hover: #202024;
+        --text-primary: #f2f2f3;
+        --text-muted: #8b8d98;
+        --text-on-accent: #0e0e10;
+        --accent: #818cf8;
+        --accent-soft: rgba(129, 140, 248, 0.16);
+        --border: #2a2a2e;
+        --shadow: rgba(0, 0, 0, 0.35);
+        --shadow-hover: rgba(0, 0, 0, 0.55);
     }
 }
 :root[data-theme="dark"]{
-    --bg-1: #000000;
-    --bg-2: #1e1f23;
-    --bg-3: #111111;
-    --text-primary: #ffffff;
-    --text-muted: #bbbbbb;
-    --accent-secondary: #9b8cff;
-    --accent-warm-text: #ff5c7a;
-    --tag-text: #9b8cff;
-    --accent-soft: rgba(135, 81, 254, 0.12);
-    --card-shadow: rgba(255, 255, 255, 0.05);
-    --card-shadow-hover: rgba(0, 0, 0, 0.5);
+    --bg-page: #0e0e10;
+    --bg-surface: #18181b;
+    --bg-surface-hover: #202024;
+    --text-primary: #f2f2f3;
+    --text-muted: #8b8d98;
+    --text-on-accent: #0e0e10;
+    --accent: #818cf8;
+    --accent-soft: rgba(129, 140, 248, 0.16);
+    --border: #2a2a2e;
+    --shadow: rgba(0, 0, 0, 0.35);
+    --shadow-hover: rgba(0, 0, 0, 0.55);
 }
 @media (prefers-reduced-motion: reduce){
     *, *::before, *::after{
@@ -62,7 +62,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     box-sizing: border-box;
     text-decoration: none;
 }
@@ -84,18 +84,18 @@ html{
     scroll-behavior: smooth;
 }
 body{
-    background: var(--bg-1);
+    background: var(--bg-page);
     color: var(--text-primary);
     transition: background-color 0.25s ease, color 0.25s ease;
 }
 /*nav bar*/
 .navbar{
-    background-color: var(--bg-1);
+    background-color: var(--bg-page);
     width: 100%;
     z-index: 999;
     padding: 10px 20px;
-    font-family: 'ubuntu',sans-serif;
-    transition: all 0.3s ease;
+    border-bottom: 1px solid var(--border);
+    transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 .navbar .max-width{
     display: flex;
@@ -117,48 +117,48 @@ body{
     gap: 14px;
 }
 .theme-toggle{
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    border: 1px solid var(--text-muted);
+    border: 1px solid var(--border);
     background: none;
     color: var(--text-primary);
-    font-size: 16px;
+    font-size: 15px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 .theme-toggle:hover{
-    background: var(--bg-2);
+    background: var(--bg-surface-hover);
+    border-color: var(--accent);
 }
 .theme-toggle:focus-visible{
     outline: 2px solid var(--accent);
     outline-offset: 2px;
 }
 .navbar .button {
-    background: linear-gradient(65deg, var(--accent-grad-1), var(--accent-grad-2));
+    background: var(--accent);
     display: inline-flex;
-    font-size: 12px;
-    letter-spacing: 0;
-    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    font-weight: 600;
     line-height: 16px;
-    text-transform: uppercase;
+    text-transform: none;
     text-decoration: none!important;
     border: none;
-    border-radius: 2px;
+    border-radius: 8px;
     justify-content: center;
-    padding: 12px 24px;
+    padding: 10px 20px;
     text-align: center;
     white-space: nowrap;
-    box-shadow: 0 8px 24px rgb(32 43 54 / 12%);
-    transition: all .15s ease;
+    transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
     cursor: pointer;
 }
 .navbar .button:hover{
-    transform: translateY(-2px);
-    box-shadow: 0 12px 28px rgb(32 43 54 / 20%);
+    transform: translateY(-1px);
+    opacity: 0.92;
 }
 .button a{
     color: var(--text-on-accent);
@@ -170,22 +170,22 @@ body{
 }
 /* Typing animation */
 .home {
-    background-color: var(--bg-1);
+    background-color: var(--bg-page);
     padding: 5% 0;
     text-align: center;
     transition: background-color 0.25s ease;
 }
 
 .head {
-    color: var(--accent-secondary);
+    color: var(--text-primary);
+    font-weight: 800;
     font-size: 40px;
     margin-bottom: 10px;
 }
 
 .container {
-    font-size: 24px;
+    font-size: 22px;
     color: var(--text-primary);
-    font-family: 'Poppins', sans-serif;
 }
 
 .text.first-text {
@@ -247,7 +247,8 @@ body{
 .category-nav { animation-delay: 0.15s; }
 .head
 {
-    color: var(--accent-secondary);
+    color: var(--text-primary);
+    font-weight: 800;
     text-align: center;
     font-size: 40px;
 }
@@ -262,13 +263,13 @@ body{
 .listofboxes{
     padding-top: 50px;
     color: var(--text-primary);
-    background: var(--bg-2);
+    background: var(--bg-page);
     transition: background-color 0.25s ease;
 }
 .listofboxes p{
     text-align: center;
     font-size: 17px;
-    color: var(--text-primary);
+    color: var(--text-muted);
     padding-top: 7px;
 }
 /* .max-width has no width rule of its own outside the navbar (see the Day 8
@@ -298,12 +299,11 @@ body{
 .search-bar input{
     width: 100%;
     padding: 12px 16px 12px 40px;
-    border-radius: 999px;
-    border: 1px solid var(--card-shadow-hover);
-    background: var(--bg-1);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--bg-surface);
     color: var(--text-primary);
     font-size: 15px;
-    font-family: 'Poppins', sans-serif;
     outline: none;
     transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
@@ -326,14 +326,15 @@ body{
     position: sticky;
     top: 0;
     z-index: 50;
-    background: var(--bg-2);
-    padding: 16px 20px 10px;
+    background: var(--bg-page);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 20px 14px;
     margin-top: 20px;
-    transition: background-color 0.25s ease;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 .category-nav-inner{
     display: flex;
-    gap: 10px;
+    gap: 8px;
     overflow-x: auto;
     padding-bottom: 6px;
 }
@@ -341,7 +342,7 @@ body{
     height: 6px;
 }
 .category-nav-inner::-webkit-scrollbar-thumb{
-    background: var(--card-shadow-hover);
+    background: var(--border);
     border-radius: 999px;
 }
 .category-chip{
@@ -349,25 +350,28 @@ body{
     align-items: center;
     gap: 6px;
     flex: 0 0 auto;
-    padding: 10px 16px;
-    border: none;
-    border-radius: 999px;
-    background: var(--bg-1);
+    padding: 9px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg-surface);
     color: var(--text-muted);
     font-family: inherit;
     font-size: 13.5px;
-    font-weight: 600;
+    font-weight: 500;
     white-space: nowrap;
     cursor: pointer;
     appearance: none;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 .category-chip:hover{
     color: var(--text-primary);
+    background: var(--bg-surface-hover);
+    border-color: var(--text-muted);
 }
 .category-chip.active{
     background: var(--accent);
     color: var(--text-on-accent);
+    border-color: var(--accent);
 }
 .category-chip:focus-visible{
     outline: 2px solid var(--accent);
@@ -389,7 +393,7 @@ body{
     margin-bottom: 20px;
 }
 .category-title i{
-    color: var(--accent-secondary);
+    color: var(--accent);
     margin-right: 8px;
 }
 /* CSS Grid (not flex-wrap) so cards always fill the full row width evenly —
@@ -404,20 +408,21 @@ body{
 }
 .tool-card{
     display: block;
-    background: var(--bg-1);
+    background: var(--bg-surface);
     color: var(--text-primary);
     text-decoration: none;
     text-align: left;
-    border-radius: 8px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
     padding: 28px 24px;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 10px var(--card-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+    box-shadow: 0 1px 2px var(--shadow);
 }
 .tool-card i{
-    font-size: 22px;
-    color: var(--accent-secondary);
+    font-size: 20px;
+    color: var(--accent);
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 .tool-card h3{
     font-size: 18px;
@@ -437,17 +442,18 @@ body{
 .tool-card-tags .tag{
     display: inline-block;
     font-size: 11px;
-    font-weight: 700;
+    font-weight: 600;
     padding: 3px 9px;
     border-radius: 999px;
     background: var(--accent-soft);
-    color: var(--tag-text);
+    color: var(--accent);
     margin-right: 6px;
 }
 .tool-card:hover{
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px var(--card-shadow-hover);
-    background: var(--bg-2);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px var(--shadow-hover);
+    background: var(--bg-surface-hover);
+    border-color: var(--border);
 }
 .tool-card:focus-visible{
     outline: 2px solid var(--accent);
@@ -456,16 +462,16 @@ body{
 
 /*  footer section styling  */
 footer{
-    background: var(--bg-1);
+    background: var(--bg-page);
     padding: 32px 23px;
     color: var(--text-muted);
     text-align: center;
     font-size: 15px;
-    border-top: 1px solid var(--card-shadow);
+    border-top: 1px solid var(--border);
     transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 footer span a{
-    color: var(--accent-warm-text);
+    color: var(--accent);
     font-weight: 600;
     text-decoration: none;
 }
@@ -473,11 +479,15 @@ footer span a:hover{
     text-decoration: underline;
 }
 footer span a:focus-visible{
-    outline: 2px solid var(--accent-warm-text);
+    outline: 2px solid var(--accent);
     outline-offset: 2px;
 }
+/* the heart stays a fixed warm red in both themes — a small, deliberate,
+   universally-understood exception ("made with love") rather than another
+   competing brand color; it's decorative (aria-hidden), so it isn't held
+   to text contrast requirements. */
 footer span .fa-heart{
-    color: var(--accent-warm-text);
+    color: #ef4444;
 }
 
 /* contact / submit-a-resource section — shared by index.htm's contact form
@@ -487,9 +497,10 @@ footer span .fa-heart{
    the previous left column looking sparse. */
 .contact{
     color: var(--text-primary);
-    background: var(--bg-3);
+    background: var(--bg-page);
+    border-top: 1px solid var(--border);
     padding: 70px 0;
-    transition: background-color 0.25s ease, color 0.25s ease;
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 .contact .max-width{
     max-width: 1300px;
@@ -531,13 +542,12 @@ footer span .fa-heart{
 .contact-form .textarea textarea{
     height: 100%;
     width: 100%;
-    border: 1px solid var(--card-shadow-hover);
+    border: 1px solid var(--border);
     border-radius: 8px;
     outline: none;
     padding: 0 16px;
     font-size: 16px;
-    font-family: 'Poppins',sans-serif;
-    background: var(--bg-1);
+    background: var(--bg-surface);
     color: var(--text-primary);
     transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
@@ -565,7 +575,6 @@ footer span .fa-heart{
 .contact-form .textarea textarea{
     padding: 14px 16px;
     resize: none;
-    font-family: 'Poppins',sans-serif;
 }
 .contact-form .button{
     height: 52px;
@@ -574,21 +583,21 @@ footer span .fa-heart{
 .contact-form .button button{
     width: 100%;
     height: 100%;
-    border: 2px solid var(--accent-warm);
-    background: var(--accent-warm);
+    border: none;
+    background: var(--accent);
     color: var(--text-on-accent);
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 600;
     border-radius: 8px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
 }
 .contact-form .button button:hover{
-    transform: translateY(-2px);
-    box-shadow: 0 10px 24px var(--card-shadow-hover);
+    transform: translateY(-1px);
+    opacity: 0.92;
 }
 .contact-form .button button:focus-visible{
-    outline: 2px solid var(--accent-warm-text);
+    outline: 2px solid var(--accent);
     outline-offset: 2px;
 }
 
