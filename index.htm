@@ -29,100 +29,11 @@
     </section>
 
     <!---the data tab--->
-    <section class="listofboxes">
+    <section class="listofboxes" id="directory">
         <div class="head">Tools and Resources</div>
         <p>Find the tools you need in each category</p>
         <div class="max-width">
-            <div class="list-content">
-                <div class="card"> 
-                    <a href="/gradients.htm"  style="color:#fff; ">  
-                        <div class="box">
-                            <i class="fa-solid fa-rainbow"></i>
-                            <div class="text">Gradients</div>   
-                        </div>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="/colors.htm"  style="color:#fff; ">  
-                        <div class="box">
-                            <i class="fa-solid fa-palette"></i>
-                            <div class="text">Colors</div> 
-                        </div>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="/fonts.htm"  style="color:#fff; ">    
-                        <div class="box">
-                            <i class="fa-solid fa-font"></i>
-                            <div class="text">Fonts</div>   
-                        </div>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="/logos.htm"  style="color:#fff; ">    
-                        <div class="box">
-                            <i class="fa-solid fa-tag"></i>
-                            <div class="text">Logos</div> 
-                        </div>
-                    </a>
-                </div>  
-                <div class="card">
-                    <a href="/templates.htm"  style="color:#fff; ">  
-                        <div class="box">
-                            <i class="fa fa-layer-group"></i>
-                            <div class="text">Templates</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="/emojis.htm"  style="color:#fff; ">  
-                        <div class="box">
-                            <i class="fa fa-face-grin"></i>
-                            <div class="text">Emojis</div>  
-                        </div>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="/animations.htm"  style="color:#fff; ">    
-                        <div class="box">
-                            <i class="fa fa-magic"></i>
-                            <div class="text">Animations</div> 
-                        </div>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="/ai.htm"  style="color:#fff; ">    
-                        <div class="box">
-                            <i class="fa fa-robot"></i>
-                            <div class="text">Artificial Intelligence</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="/style-guides.htm"  style="color:#fff; ">  
-                        <div class="box">
-                            <i class="fa fa-palette"></i>
-                            <div class="text">Style Guides</div>   
-                        </div>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="/bg-remover.htm"  style="color:#fff; ">  
-                        <div class="box">
-                            <i class="fa fa-scissors"></i>
-                            <div class="text">Background Remover</div> 
-                        </div>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="/codesnippets.htm"  style="color:#fff; ">
-                        <div class="box">
-                            <i class="fa fa-code"></i>
-                            <div class="text">Code Snippets</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            <div id="tool-categories"><!-- populated by assets/js/app.js from data/tools.js --></div>
         </div>
     </section>
     <!--contact us section-->
@@ -177,6 +88,9 @@
         <span>Created By <a href="#">HEXAGON</a> With <span class="fa fa-heart"></span></span>
     </footer>
 
+    <script src="data/tools.js"></script>
+    <script src="assets/js/render.js"></script>
+    <script src="assets/js/app.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>

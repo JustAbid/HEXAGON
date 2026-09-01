@@ -130,35 +130,75 @@ html{
     background: #111;
     content: "works";
 }
-.listofboxes .list-content{
+/* category sections + tool cards (data-driven, see assets/js/app.js) */
+.category-section{
+    padding-top: 40px;
+}
+.category-section:first-child{
     padding-top: 10px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
 }
-.listofboxes .list-content .card{
-
-    background: #000;
-    text-align: center;
-    border-radius: 4px;
-    padding: 40px 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin: 20px;
-    min-width: 320px;
-    height: 200px;
+.category-title{
+    font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 18px;
 }
-.listofboxes .list-content .card i{
-    font-size: 25px;
+.category-title i{
     color: darkslateblue;
+    margin-right: 8px;
 }
-.listofboxes .list-content .card .text{
-    margin: 10px 0 10px 0;
+.tool-grid{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
-.listofboxes .list-content .card:hover{
-    transform: translateY(-25px);
-    box-shadow: 0 40px 70px rgba(0,0,0,0.5);
+.tool-card{
+    display: block;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    text-align: left;
+    border-radius: 6px;
+    padding: 26px 22px;
+    width: 280px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(255,255,255,0.05);
+}
+.tool-card i{
+    font-size: 22px;
+    color: darkslateblue;
+    display: block;
+    margin-bottom: 10px;
+}
+.tool-card h3{
+    font-size: 18px;
+    margin: 0 0 8px;
+    color: #fff;
+}
+.tool-card p{
+    font-size: 14px;
+    color: #bbb;
+    text-align: left;
+    padding-top: 0;
+    margin: 0;
+}
+.tool-card-tags{
+    margin-bottom: 10px;
+}
+.tool-card-tags .tag{
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 999px;
+    background: rgba(135,81,254,0.12);
+    color: #8751fe;
+    margin-right: 6px;
+}
+.tool-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    background: #1e1f23;
 }
 
 /*  footer section styling  */
