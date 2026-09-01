@@ -235,13 +235,6 @@ body{
     color: var(--text-primary);
     padding-top: 7px;
 }
-.listofboxes .title::before{
-    background: #fff;
-}
-.listofboxes .title::after{
-    background: #111;
-    content: "works";
-}
 /* .max-width has no width rule of its own outside the navbar (see the Day 8
    note) — give the directory's content column a matching horizontal inset
    so cards don't sit flush against the viewport edge. */
@@ -457,13 +450,6 @@ footer span .fa-heart{
     align-items: center;
     justify-content: space-between;
 }
-.contact .title::before{
-    background: #fff;
-}
-.contact .title::after{
-    background: #111;
-    content: "get in touch";
-}
 .contact .contact-content .column{
     width: calc(50% - 30px);
 }
@@ -520,6 +506,7 @@ footer span .fa-heart{
     margin-bottom: 15px;
 }
 .contact .right form .field input,
+.contact .right form .field select,
 .contact .right form .textarea textarea{
     height: 100%;
     width: 100%;
@@ -529,9 +516,12 @@ footer span .fa-heart{
     padding: 0 15px;
     font-size: 17px;
     font-family: 'Poppins',sans-serif;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    background: var(--bg-1);
+    color: var(--text-primary);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
 .contact .right form .field input:focus,
+.contact .right form .field select:focus,
 .contact .right form .textarea textarea:focus{
     border-color: var(--accent);
     box-shadow: 0 0 0 3px var(--accent-soft);

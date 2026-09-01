@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit a Resource | Hextools</title>
+    <script>
+      // Applied before first paint so a returning visitor's chosen theme
+      // shows immediately instead of flashing the system default first.
+      (function () {
+        try {
+          var stored = localStorage.getItem("hextools-theme");
+          if (stored === "light" || stored === "dark") {
+            document.documentElement.setAttribute("data-theme", stored);
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo"><a href="/index.htm">Hextools</a></div>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark theme">
+                    <i class="fa-solid fa-moon" aria-hidden="true"></i>
+                </button>
+                <div class="button">
+                    <a href="/index.htm">Back to Directory</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="contact" id="submit-resource">
+        <div class="max-width">
+            <h1 class="title">Submit a Resource</h1>
+            <div class="contact-content">
+                <div class="column left">
+                    <div class="text">Know a great tool?</div>
+                    <p>Suggest a tool or resource you think belongs in the directory. Include a short description of what it does and why it's useful &mdash; submissions are reviewed before being added to a category.</p>
+                </div>
+                <div class="column right">
+                    <form action="https://formspree.io/f/xknynbrq" method="post">
+                        <input type="hidden" name="_subject" value="New resource submission - Hextools">
+                        <div class="field">
+                            <input type="text" id="tool-name" name="toolName" placeholder="Tool or resource name" aria-label="Tool or resource name" required>
+                        </div>
+                        <div class="field">
+                            <input type="url" id="tool-url" name="toolUrl" placeholder="Link (https://...)" aria-label="Link" required>
+                        </div>
+                        <div class="field">
+                            <select id="tool-category" name="category" aria-label="Category" required>
+                                <option value="" disabled selected>Choose a category&hellip;</option>
+                                <option value="Colors">Colors</option>
+                                <option value="Fonts &amp; Typography">Fonts &amp; Typography</option>
+                                <option value="Logos &amp; Branding">Logos &amp; Branding</option>
+                                <option value="Gradients">Gradients</option>
+                                <option value="Templates">Templates</option>
+                                <option value="Emojis">Emojis</option>
+                                <option value="Style Guides">Style Guides</option>
+                                <option value="Background Remover">Background Remover</option>
+                                <option value="Code Snippets">Code Snippets</option>
+                                <option value="Artificial Intelligence">Artificial Intelligence</option>
+                                <option value="Animations">Animations</option>
+                                <option value="Other">Other / suggest a new category</option>
+                            </select>
+                        </div>
+                        <div class="field textarea">
+                            <textarea cols="30" rows="6" id="tool-description" name="description" placeholder="What does it do, and why is it worth including?" aria-label="Description" required></textarea>
+                        </div>
+                        <div class="field">
+                            <input type="email" id="submitter-email" name="_replyto" placeholder="Your email (optional, in case we have questions)" aria-label="Your email (optional)">
+                        </div>
+                        <div class="button">
+                            <button type="submit">Submit Resource</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <span>Created By <a href="https://github.com/JustAbid/HEXAGON" target="_blank" rel="noopener">HEXAGON</a> With <span class="fa fa-heart" aria-hidden="true"></span></span>
+    </footer>
+
+    <script src="assets/js/theme.js"></script>
+</body>
+</html>
