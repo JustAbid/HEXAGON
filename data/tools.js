@@ -38,7 +38,7 @@ const categories = [
 ];
 
 const tools = [
-  // ---- Colors (colors.htm) ----
+  // ---- Colors ----
   { id: "coolors", title: "Coolors", description: "Generate perfect color palettes with a single click.", url: "https://coolors.co/", category: "colors", icon: null, tags: [] },
   { id: "color-hunt", title: "Color Hunt", description: "Curated collection of trendy color palettes.", url: "https://colorhunt.co/", category: "colors", icon: null, tags: [] },
   { id: "colorsinspo-colors", title: "Colorsinspo", description: "All-in-one resource for colors, palettes, and gradients.", url: "https://colorsinspo.com/", category: "colors", icon: null, tags: [] },
@@ -48,7 +48,7 @@ const tools = [
   { id: "paletton", title: "Paletton", description: "Interactive color wheel for generating harmonious palettes.", url: "https://paletton.com/", category: "colors", icon: null, tags: [] },
   { id: "colorzilla", title: "ColorZilla", description: "Advanced color picker and gradient generator browser extension.", url: "https://colorzilla.com/", category: "colors", icon: null, tags: [] },
 
-  // ---- Fonts & Typography (fonts.htm) ----
+  // ---- Fonts & Typography ----
   { id: "google-fonts", title: "Google Fonts", description: "Browse and use thousands of free open-source fonts for web and design.", url: "https://fonts.google.com/", category: "fonts", icon: null, tags: [] },
   { id: "fontshare", title: "Fontshare", description: "High-quality fonts by Indian Type Foundry, free for personal and commercial use.", url: "https://www.fontshare.com/", category: "fonts", icon: null, tags: [] },
   { id: "dafont", title: "DaFont", description: "Download free fonts by category or style for all design needs.", url: "https://www.dafont.com/", category: "fonts", icon: null, tags: [] },
@@ -58,7 +58,7 @@ const tools = [
   { id: "typelab", title: "TypeLab", description: "Explore creative typefaces for your next digital or print design.", url: "https://www.typelab.co/", category: "fonts", icon: null, tags: [] },
   { id: "font-pair", title: "Font Pair", description: "Find perfect font pairings for your projects using Google Fonts.", url: "https://fontpair.co/", category: "fonts", icon: null, tags: [] },
 
-  // ---- Logos & Branding (logos.htm) ----
+  // ---- Logos & Branding ----
   { id: "looka", title: "Looka", description: "Create beautiful, AI-generated logos and complete brand kits in minutes.", url: "https://looka.com/", category: "logos", icon: null, tags: [] },
   { id: "freelogodesign", title: "FreeLogoDesign", description: "Design your logo online for free with easy templates and customization.", url: "https://www.freelogodesign.org/", category: "logos", icon: null, tags: [] },
   { id: "hatchful", title: "Hatchful by Shopify", description: "Free and fast logo maker for startups and small businesses.", url: "https://www.hatchful.shopify.com/", category: "logos", icon: null, tags: [] },
@@ -68,7 +68,7 @@ const tools = [
   { id: "namecheap-logo-maker", title: "Namecheap Logo Maker", description: "Generate and download free logos with editable vectors and color schemes.", url: "https://www.namecheap.com/logo-maker/", category: "logos", icon: null, tags: [] },
   { id: "logoai", title: "LogoAI", description: "AI-powered logo generator for startups and tech brands.", url: "https://app.logoai.com/", category: "logos", icon: null, tags: [] },
 
-  // ---- Gradients (gradients.htm) ----
+  // ---- Gradients ----
   { id: "gradient-page", title: "Gradient Page", description: "Get 90+ high-quality gradient wallpapers in 5K resolution.", url: "https://gradient.page/", category: "gradients", icon: null, tags: [] },
   { id: "grabient", title: "Grabient", description: "Pick gradients and adjust stops using an intuitive UI.", url: "https://www.grabient.com/", category: "gradients", icon: null, tags: [] },
   { id: "colorsinspo-gradients", title: "Colorsinspo", description: "Color palettes and gradients with inspiration and tools.", url: "https://colorsinspo.com/", category: "gradients", icon: null, tags: [] },
@@ -76,7 +76,7 @@ const tools = [
   { id: "webgradients", title: "WebGradients", description: "Free collection of 180 linear gradients for websites.", url: "https://webgradients.com/", category: "gradients", icon: null, tags: [] },
   { id: "mesh-gradient", title: "Mesh Gradient", description: "Create beautiful mesh gradient backgrounds easily.", url: "https://meshgradient.in/", category: "gradients", icon: null, tags: [] },
 
-  // ---- Templates (templates.htm) ----
+  // ---- Templates ----
   { id: "html5-up", title: "HTML5 UP", description: "Fully responsive HTML5 + CSS3 site templates, clean and easily customizable — great for landing pages and portfolios.", url: "https://html5up.net/", category: "templates", icon: null, tags: ["Free"] },
   { id: "start-bootstrap", title: "Start Bootstrap", description: "Bootstrap-based templates and themes for dashboards, landing pages, and business sites — easy to drop into projects.", url: "https://startbootstrap.com/", category: "templates", icon: null, tags: ["Free"] },
   { id: "templated", title: "Templated", description: "Large collection of free CSS/HTML site templates with permissive use — handy for small business and personal sites.", url: "https://templated.co/", category: "templates", icon: null, tags: ["Free"] },
@@ -88,7 +88,7 @@ const tools = [
   { id: "tailwind-ui", title: "Tailwind UI", description: "High-quality, professionally designed UI components and templates built with Tailwind CSS — ideal for custom builds.", url: "https://tailwindui.com/", category: "templates", icon: null, tags: ["Premium"] },
   { id: "creative-tim", title: "Creative Tim", description: "Free and premium UI kits, admin dashboards and landing pages built with Bootstrap, React, Vue and Tailwind.", url: "https://www.creative-tim.com/", category: "templates", icon: null, tags: ["Free / Paid"] },
 
-  // ---- Emojis (emojis.htm) ----
+  // ---- Emojis ----
   { id: "emojipedia", title: "Emojipedia", description: "The ultimate emoji reference site — search every emoji, meaning, and Unicode version. Constantly updated.", url: "https://emojipedia.org/", category: "emojis", icon: null, tags: ["Comprehensive"] },
   { id: "getemoji", title: "GetEmoji", description: "Copy and paste emojis instantly into any app or site — quick, simple and ad-free interface.", url: "https://getemoji.com/", category: "emojis", icon: null, tags: ["Free"] },
   { id: "emoji-gg", title: "Emoji.gg", description: "Large community-driven library of Discord and custom emojis — perfect for social media and servers.", url: "https://emoji.gg/", category: "emojis", icon: null, tags: ["Community"] },
@@ -98,7 +98,7 @@ const tools = [
   { id: "icons8-emoji", title: "Icons8 Emoji", description: "Professionally designed emoji illustrations in multiple styles — perfect for UI mockups or presentations.", url: "https://icons8.com/emoji", category: "emojis", icon: null, tags: ["Creative"] },
   { id: "openmoji", title: "OpenMoji", description: "Free and open-source emoji project offering consistent SVG and PNG downloads for all emojis.", url: "https://openmoji.org/", category: "emojis", icon: null, tags: ["Open Source"] },
 
-  // ---- Style Guides (style-guides.htm) ----
+  // ---- Style Guides ----
   { id: "apple-hig", title: "Apple Human Interface Guidelines", description: "Apple's official design principles for iOS, macOS, watchOS, and tvOS — focus on clarity, depth, and deference.", url: "https://www.apple.com/design/human-interface-guidelines/", category: "style-guides", icon: null, tags: ["Official"] },
   { id: "material-design-3", title: "Google Material Design 3", description: "Google's design system for consistent, adaptive UIs — includes color, motion, typography, and accessibility guidelines.", url: "https://m3.material.io/", category: "style-guides", icon: null, tags: ["Official"] },
   { id: "atlassian-design-system", title: "Atlassian Design System", description: "Comprehensive guide on Atlassian's product design philosophy with principles, patterns, and reusable components.", url: "https://atlassian.design/", category: "style-guides", icon: null, tags: ["Company"] },
@@ -108,7 +108,7 @@ const tools = [
   { id: "github-primer", title: "GitHub Primer", description: "GitHub's design framework for product and web experiences — includes CSS utilities, components, and patterns.", url: "https://primer.style/", category: "style-guides", icon: null, tags: ["Open-source"] },
   { id: "us-web-design-system", title: "US Web Design System", description: "Official U.S. government design system for accessible, consistent digital services across federal agencies.", url: "https://designsystem.digital.gov/", category: "style-guides", icon: null, tags: ["Government"] },
 
-  // ---- Background Remover (bg-remover.htm) — source cards had no description text, only name + icon ----
+  // ---- Background Remover — originally had no per-tool descriptions, only name + icon ----
   { id: "remove-bg", title: "Remove.bg", description: "One-click AI background removal for photos, with a free tier for quick edits.", url: "https://www.remove.bg/", category: "background-remover", icon: "fa-solid fa-cut", tags: [] },
   { id: "slazzer", title: "Slazzer", description: "Automatic background remover with a bulk-processing API for larger workflows.", url: "https://www.slazzer.com/", category: "background-remover", icon: "fa-solid fa-eraser", tags: [] },
   { id: "cleanup-pictures", title: "Cleanup.pictures", description: "AI tool to remove unwanted objects, people, or backgrounds from photos.", url: "https://www.cleanup.pictures/", category: "background-remover", icon: "fa-solid fa-image", tags: [] },
@@ -116,7 +116,7 @@ const tools = [
   { id: "erase-bg", title: "Erase.bg", description: "Free background remover with instant, no-signup image processing.", url: "https://www.erase.bg/", category: "background-remover", icon: "fa-solid fa-layer-group", tags: [] },
   { id: "fotor-bg-remover", title: "Fotor Background Remover", description: "Background removal built into Fotor's broader online photo editor.", url: "https://www.fotor.com/features/background-remover/", category: "background-remover", icon: "fa-solid fa-circle-half-stroke", tags: [] },
 
-  // ---- Code Snippets (codesnippets.htm) ----
+  // ---- Code Snippets ----
   { id: "carbon", title: "Carbon", description: "Create and share beautiful images of your source code with custom themes and fonts.", url: "https://carbon.now.sh/", category: "code-snippets", icon: "fa-solid fa-terminal", tags: [] },
   { id: "snappify", title: "Snappify", description: "Professional code snippets creator — generate stunning visuals of your code with AI assistance.", url: "https://snappify.com/", category: "code-snippets", icon: "fa-solid fa-camera", tags: [] },
   { id: "codepen", title: "CodePen", description: "Front-end playground for HTML, CSS and JS — perfect for showcasing and testing snippets.", url: "https://codepen.io/", category: "code-snippets", icon: "fa-solid fa-pen-to-square", tags: [] },
@@ -124,7 +124,7 @@ const tools = [
   { id: "snippet-generator", title: "Snippet Generator", description: "Quickly generate formatted VS Code / Sublime snippets — save repetitive typing time.", url: "https://snippet-generator.app/", category: "code-snippets", icon: "fa-solid fa-clipboard", tags: [] },
   { id: "ztm-code-snippets", title: "ZTM Code Snippets", description: "Curated list of reusable HTML/CSS/JS code snippets for modern developers.", url: "https://zerotomastery.io/resources/code-snippets/", category: "code-snippets", icon: "fa-solid fa-folder-open", tags: [] },
 
-  // ---- Artificial Intelligence (ai.htm) — source cards had no description text, only name + icon ----
+  // ---- Artificial Intelligence — originally had no per-tool descriptions, only name + icon ----
   { id: "chatgpt", title: "ChatGPT", description: "OpenAI's conversational AI assistant for writing, coding, and research.", url: "https://chat.openai.com/", category: "ai", icon: "fa-solid fa-robot", tags: [] },
   { id: "google-gemini", title: "Google Gemini", description: "Google's multimodal AI assistant, integrated across Search, Docs, and Android.", url: "https://gemini.google.com/", category: "ai", icon: "fa-solid fa-brain", tags: [] },
   { id: "github-copilot", title: "GitHub Copilot", description: "AI pair programmer that suggests code and whole functions in your editor.", url: "https://github.com/features/copilot", category: "ai", icon: "fa-solid fa-code", tags: [] },
@@ -132,7 +132,7 @@ const tools = [
   { id: "hugging-face", title: "Hugging Face", description: "Hub for open-source machine learning models, datasets, and demos.", url: "https://www.huggingface.co/", category: "ai", icon: "fa-solid fa-network-wired", tags: [] },
   { id: "midjourney", title: "Midjourney", description: "AI image generator known for its distinctive, painterly output style.", url: "https://www.midjourney.com/", category: "ai", icon: "fa-solid fa-image", tags: [] },
 
-  // ---- Animations (animations.htm) — source cards had no description text, only name + icon ----
+  // ---- Animations — originally had no per-tool descriptions, only name + icon ----
   { id: "animate-css", title: "Animate.css", description: "Ready-to-use CSS animation library — drop in a class name, get a polished effect.", url: "https://animate.style/", category: "animations", icon: "fa-solid fa-bolt", tags: [] },
   { id: "animista", title: "Animista", description: "Visual CSS animation generator — tweak settings and copy the resulting keyframes.", url: "https://animista.net/", category: "animations", icon: "fa-solid fa-wand-magic-sparkles", tags: [] },
   { id: "lottiefiles", title: "LottieFiles", description: "Library and player for lightweight, vector-based Lottie animations.", url: "https://lottiefiles.com/", category: "animations", icon: "fa-solid fa-shapes", tags: [] },
