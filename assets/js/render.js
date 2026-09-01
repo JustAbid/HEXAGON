@@ -31,6 +31,7 @@ function createCard(tool) {
 
   const icon = document.createElement("i");
   icon.className = resolveIcon(tool);
+  icon.setAttribute("aria-hidden", "true");
   card.appendChild(icon);
 
   if (tool.tags && tool.tags.length) {
@@ -52,6 +53,11 @@ function createCard(tool) {
   const description = document.createElement("p");
   description.textContent = tool.description;
   card.appendChild(description);
+
+  const newTabNote = document.createElement("span");
+  newTabNote.className = "visually-hidden";
+  newTabNote.textContent = " (opens in a new tab)";
+  card.appendChild(newTabNote);
 
   return card;
 }

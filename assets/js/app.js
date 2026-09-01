@@ -24,7 +24,7 @@ function renderCategoryNav(activeCategories) {
   allChip.type = "button";
   allChip.className = "category-chip active";
   allChip.dataset.category = "all";
-  allChip.innerHTML = `<i class="fa-solid fa-border-all"></i> All`;
+  allChip.innerHTML = `<i class="fa-solid fa-border-all" aria-hidden="true"></i> All`;
   nav.appendChild(allChip);
 
   activeCategories.forEach((category) => {
@@ -32,7 +32,7 @@ function renderCategoryNav(activeCategories) {
     chip.type = "button";
     chip.className = "category-chip";
     chip.dataset.category = category.id;
-    chip.innerHTML = `<i class="${category.icon}"></i> ${category.label}`;
+    chip.innerHTML = `<i class="${category.icon}" aria-hidden="true"></i> ${category.label}`;
     nav.appendChild(chip);
   });
 }
@@ -49,7 +49,7 @@ function renderCategorySections(activeCategories, grouped) {
 
     const heading = document.createElement("h3");
     heading.className = "category-title";
-    heading.innerHTML = `<i class="${category.icon}"></i> ${category.label}`;
+    heading.innerHTML = `<i class="${category.icon}" aria-hidden="true"></i> ${category.label}`;
     section.appendChild(heading);
 
     const grid = document.createElement("div");
