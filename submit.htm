@@ -38,50 +38,45 @@
 
     <section class="contact" id="submit-resource">
         <div class="max-width">
-            <h1 class="title">Submit a Resource</h1>
-            <div class="contact-content">
-                <div class="column left">
-                    <div class="text">Know a great tool?</div>
-                    <p>Suggest a tool or resource you think belongs in the directory. Include a short description of what it does and why it's useful &mdash; submissions are reviewed before being added to a category.</p>
-                </div>
-                <div class="column right">
-                    <form action="https://formspree.io/f/xknynbrq" method="post">
-                        <input type="hidden" name="_subject" value="New resource submission - Hextools">
-                        <div class="field">
-                            <input type="text" id="tool-name" name="toolName" placeholder="Tool or resource name" aria-label="Tool or resource name" required>
-                        </div>
-                        <div class="field">
-                            <input type="url" id="tool-url" name="toolUrl" placeholder="Link (https://...)" aria-label="Link" required>
-                        </div>
-                        <div class="field">
-                            <select id="tool-category" name="category" aria-label="Category" required>
-                                <option value="" disabled selected>Choose a category&hellip;</option>
-                                <option value="Colors">Colors</option>
-                                <option value="Fonts &amp; Typography">Fonts &amp; Typography</option>
-                                <option value="Logos &amp; Branding">Logos &amp; Branding</option>
-                                <option value="Gradients">Gradients</option>
-                                <option value="Templates">Templates</option>
-                                <option value="Emojis">Emojis</option>
-                                <option value="Style Guides">Style Guides</option>
-                                <option value="Background Remover">Background Remover</option>
-                                <option value="Code Snippets">Code Snippets</option>
-                                <option value="Artificial Intelligence">Artificial Intelligence</option>
-                                <option value="Animations">Animations</option>
-                                <option value="Other">Other / suggest a new category</option>
-                            </select>
-                        </div>
-                        <div class="field textarea">
-                            <textarea cols="30" rows="6" id="tool-description" name="description" placeholder="What does it do, and why is it worth including?" aria-label="Description" required></textarea>
-                        </div>
-                        <div class="field">
-                            <input type="email" id="submitter-email" name="_replyto" placeholder="Your email (optional, in case we have questions)" aria-label="Your email (optional)">
-                        </div>
-                        <div class="button">
-                            <button type="submit">Submit Resource</button>
-                        </div>
-                    </form>
-                </div>
+            <div class="contact-intro">
+                <h1 class="title">Submit a Resource</h1>
+                <p>Suggest a tool or resource you think belongs in the directory. Include a short description of what it does and why it's useful &mdash; submissions are reviewed before being added to a category.</p>
             </div>
+            <form class="contact-form" action="https://formspree.io/f/xknynbrq" method="post">
+                <input type="hidden" name="_subject" value="New resource submission - Hextools">
+                <div class="field">
+                    <input type="text" id="tool-name" name="toolName" placeholder="Tool or resource name" aria-label="Tool or resource name" required>
+                </div>
+                <div class="field">
+                    <input type="url" id="tool-url" name="toolUrl" placeholder="Link (https://...)" aria-label="Link" required>
+                </div>
+                <div class="field">
+                    <select id="tool-category" name="category" aria-label="Category" required>
+                        <option value="" disabled selected>Choose a category&hellip;</option>
+                        <option value="Colors">Colors</option>
+                        <option value="Fonts &amp; Typography">Fonts &amp; Typography</option>
+                        <option value="Logos &amp; Branding">Logos &amp; Branding</option>
+                        <option value="Gradients">Gradients</option>
+                        <option value="Templates">Templates</option>
+                        <option value="Emojis">Emojis</option>
+                        <option value="Style Guides">Style Guides</option>
+                        <option value="Background Remover">Background Remover</option>
+                        <option value="Code Snippets">Code Snippets</option>
+                        <option value="Artificial Intelligence">Artificial Intelligence</option>
+                        <option value="Animations">Animations</option>
+                        <option value="Other">Other / suggest a new category</option>
+                    </select>
+                </div>
+                <div class="field textarea">
+                    <textarea cols="30" rows="6" id="tool-description" name="description" placeholder="What does it do, and why is it worth including?" aria-label="Description" required></textarea>
+                </div>
+                <div class="field">
+                    <input type="email" id="submitter-email" name="_replyto" placeholder="Your email (optional, in case we have questions)" aria-label="Your email (optional)">
+                </div>
+                <div class="button">
+                    <button type="submit">Submit Resource</button>
+                </div>
+            </form>
         </div>
     </section>
 

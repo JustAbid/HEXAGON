@@ -103,6 +103,8 @@ body{
     justify-content: space-between;
     flex-wrap: wrap;
     row-gap: 10px;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 .navbar .logo a{
     color: var(--text-primary);
@@ -273,6 +275,8 @@ body{
    note) — give the directory's content column a matching horizontal inset
    so cards don't sit flush against the viewport edge. */
 .listofboxes .max-width{
+    max-width: 1300px;
+    margin: 0 auto;
     padding: 0 20px;
 }
 /* search bar (see assets/js/search.js) */
@@ -372,7 +376,7 @@ body{
 
 /* category sections + tool cards (data-driven, see assets/js/app.js) */
 .category-section{
-    padding-top: 40px;
+    padding-top: 56px;
     scroll-margin-top: 76px;
 }
 .category-section:first-child{
@@ -382,16 +386,21 @@ body{
     font-size: 22px;
     font-weight: 600;
     color: var(--text-primary);
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 .category-title i{
     color: var(--accent-secondary);
     margin-right: 8px;
 }
+/* CSS Grid (not flex-wrap) so cards always fill the full row width evenly —
+   a fixed-width flex row leaves whatever space is left over stranded on the
+   right, which gets more obvious the wider (or differently-sized) the
+   browser window is. auto-fill + minmax gives every row the same number of
+   even columns with no leftover gap, consistently across browsers/widths. */
 .tool-grid{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 24px;
 }
 .tool-card{
     display: block;
@@ -399,9 +408,8 @@ body{
     color: var(--text-primary);
     text-decoration: none;
     text-align: left;
-    border-radius: 6px;
-    padding: 26px 22px;
-    width: 280px;
+    border-radius: 8px;
+    padding: 28px 24px;
     transition: all 0.3s ease;
     box-shadow: 0 0 10px var(--card-shadow);
 }
@@ -449,13 +457,16 @@ body{
 /*  footer section styling  */
 footer{
     background: var(--bg-1);
-    padding: 20px 23px;
-    color: var(--text-primary);
+    padding: 32px 23px;
+    color: var(--text-muted);
     text-align: center;
-    transition: background-color 0.25s ease, color 0.25s ease;
+    font-size: 15px;
+    border-top: 1px solid var(--card-shadow);
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 footer span a{
     color: var(--accent-warm-text);
+    font-weight: 600;
     text-decoration: none;
 }
 footer span a:hover{
@@ -469,149 +480,125 @@ footer span .fa-heart{
     color: var(--accent-warm-text);
 }
 
-/*contact section*/
+/* contact / submit-a-resource section — shared by index.htm's contact form
+   and submit.htm's resource-submission form (see the .contact-form /
+   .contact-intro classes used in both). One centered column rather than
+   the old two-column layout, since removing the team-members block left
+   the previous left column looking sparse. */
 .contact{
     color: var(--text-primary);
     background: var(--bg-3);
+    padding: 70px 0;
     transition: background-color 0.25s ease, color 0.25s ease;
 }
 .contact .max-width{
+    max-width: 1300px;
+    margin: 0 auto;
     padding: 0 20px;
 }
-.contact .contact-content{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-}
-.contact .contact-content .column{
-    width: calc(50% - 30px);
-}
-.contact .contact-content .text{
-    font-size: 20px;
-    font-weight: 100;
-    margin-bottom: 10px;
-    color: var(--accent-warm-text);
-}
-.contact .contact-content .left p{
-    text-align: justify;
-}
-.contact .contact-content .left .icons{
-    margin: 10px 0;
-}
-.contact .contact-content .row{
-    display: flex;
-    height: 65px;
+.contact-intro{
     text-align: center;
+    max-width: 640px;
+    margin: 0 auto 44px;
 }
-.contact .contact-content .row .info{
-    margin-left: 30px;
-}
-.contact .contact-content .row i{
-    margin-top: 6px;
-    margin-left: 10px ;
-    font-size: 20px;
-    color: var(--accent-warm-text);
-}
-.contact .contact-content .info .head{
-    font-weight: 300;
-    font-size: 25px;
-    text-align: justify;
+.contact-intro .title{
+    font-size: 32px;
+    font-weight: 700;
     color: var(--text-primary);
+    margin-bottom: 12px;
 }
-.contact .contact-content .info .sub-title{
-    color: var(--text-primary);
-    font-size: 15px;
+.contact-intro p{
+    color: var(--text-muted);
+    font-size: 16px;
+    line-height: 1.6;
 }
-.contact .right form .fields{
+.contact-form{
+    max-width: 560px;
+    margin: 0 auto;
+}
+.contact-form .fields{
     display: flex;
-    
+    gap: 16px;
 }
-.contact .contact-content .left{
-    margin-left: 15px;
-}
-.contact .contact-content .right{
-    margin-right: 10px;
-}
-.contact .right form .field,
-.contact .right form .fields .field{
-    height:45px;
+.contact-form .field,
+.contact-form .fields .field{
+    height: 50px;
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
-.contact .right form .field input,
-.contact .right form .field select,
-.contact .right form .textarea textarea{
+.contact-form .field input,
+.contact-form .field select,
+.contact-form .textarea textarea{
     height: 100%;
     width: 100%;
-    border: 1px solid lightgrey;
-    border-radius: 6px;
+    border: 1px solid var(--card-shadow-hover);
+    border-radius: 8px;
     outline: none;
-    padding: 0 15px;
-    font-size: 17px;
+    padding: 0 16px;
+    font-size: 16px;
     font-family: 'Poppins',sans-serif;
     background: var(--bg-1);
     color: var(--text-primary);
     transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
-.contact .right form .field input:focus,
-.contact .right form .field select:focus,
-.contact .right form .textarea textarea:focus{
+.contact-form .field input::placeholder,
+.contact-form .field select:invalid,
+.contact-form .textarea textarea::placeholder{
+    color: var(--text-muted);
+}
+.contact-form .field input:focus,
+.contact-form .field select:focus,
+.contact-form .textarea textarea:focus{
     border-color: var(--accent);
     box-shadow: 0 0 0 3px var(--accent-soft);
 }
-.contact .right form .name{
-    margin-right: 10px;
+.contact-form .name{
+    margin-right: 0;
 }
-.contact .right form .email{
-    margin-left: 10px;
+.contact-form .email{
+    margin-left: 0;
 }
-.contact .right form .textarea{
-    height: 80px;
+.contact-form .textarea{
+    height: 150px;
     width: 100%;
 }
-.contact .right form .textarea textarea{
-    padding-top: 10px ;
+.contact-form .textarea textarea{
+    padding: 14px 16px;
     resize: none;
+    font-family: 'Poppins',sans-serif;
 }
-.contact .right form .button{
-    height: 47px;
-    width: 170px;
+.contact-form .button{
+    height: 52px;
+    width: 100%;
 }
-.contact .right form .button button{
+.contact-form .button button{
     width: 100%;
     height: 100%;
     border: 2px solid var(--accent-warm);
     background: var(--accent-warm);
     color: var(--text-on-accent);
-    font-size: 20px;
-    font-weight: 500;
-    border-radius: 6px;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 8px;
     cursor: pointer;
-    transition: all 0.3s ease;
-
+    transition: all 0.2s ease;
 }
-.contact .right form .button button:hover{
-    color: var(--accent-warm-text);
-    background: none;
-
+.contact-form .button button:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px var(--card-shadow-hover);
+}
+.contact-form .button button:focus-visible{
+    outline: 2px solid var(--accent-warm-text);
+    outline-offset: 2px;
 }
 
 /* ---------- small screens (phones) ---------- */
 @media (max-width: 640px){
-    .tool-card{
-        width: 100%;
-    }
-    .contact .contact-content .column{
-        width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-    }
-    .contact .right form .fields{
+    .contact-form .fields{
         flex-direction: column;
     }
-    .contact .right form .name,
-    .contact .right form .email{
+    .contact-form .name,
+    .contact-form .email{
         margin-left: 0;
         margin-right: 0;
     }

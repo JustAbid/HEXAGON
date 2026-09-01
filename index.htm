@@ -64,49 +64,29 @@
     <!--contact us section-->
     <section class="contact" id="contact">
         <div class="max-width">
-            <h2 class="title">Contact us</h2>
-            <div class="contact-content">
-               <div class="column left">
-                   <div class="text">Get in Touch</div>
-                   <p> For any queries or issues, please do contact us through the form.<br>Heartly thanking-you for visiting our website.</p>
-                   <div class="icons">
-                       <div class="row">
-                           <i class="fa-solid fa-user" aria-hidden="true"></i>
-                           <div class="info">
-                               <div class="head">Team Member Names:</div>
-                               <div class="sub-title">Ayan Khan</div>
-                               <div class="sub-title">Abid </div>
-                               <div class="sub-title">shoaib </div>
-                               <div class="sub-title">Faizan</div>
-                               <div class="sub-title">Mumaiz</div>
-                               <div class="sub-title">Gulam</div>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-               <div class="column right">
-                   <div class="text">Message us</div>
-                   <form action="https://formspree.io/f/xknynbrq" method="post">
-                       <div class="fields">
-                           <div class="field name">
-                               <input type="text" id="name" name="name" placeholder="Name" aria-label="Name" required>
-                           </div>
-                           <div class="field email">
-                               <input type="email" id="emailaddress" name="emailaddress" placeholder="Email" aria-label="Email" required>
-                           </div>
-                       </div>
-                       <div class="field">
-                           <input type="text" id="subject" name="subject" placeholder="Subject" aria-label="Subject" required>
-                       </div>
-                       <div class="field textarea">
-                           <textarea cols="30" rows="10" id="message" name="message" placeholder="Describe project.." aria-label="Message" required></textarea>
-                       </div>
-                       <div class="button">
-                           <button type="submit">Send message</button>
-                       </div>
-                   </form>
-               </div>
+            <div class="contact-intro">
+                <h2 class="title">Get in Touch</h2>
+                <p>Have a question, feedback, or a resource idea? Send a message and we'll get back to you.</p>
             </div>
+            <form class="contact-form" action="https://formspree.io/f/xknynbrq" method="post">
+                <div class="fields">
+                    <div class="field name">
+                        <input type="text" id="name" name="name" placeholder="Name" aria-label="Name" required>
+                    </div>
+                    <div class="field email">
+                        <input type="email" id="emailaddress" name="emailaddress" placeholder="Email" aria-label="Email" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <input type="text" id="subject" name="subject" placeholder="Subject" aria-label="Subject" required>
+                </div>
+                <div class="field textarea">
+                    <textarea cols="30" rows="6" id="message" name="message" placeholder="Describe project.." aria-label="Message" required></textarea>
+                </div>
+                <div class="button">
+                    <button type="submit">Send message</button>
+                </div>
+            </form>
         </div>
     </section>
       <footer>
