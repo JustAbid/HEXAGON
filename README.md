@@ -4,7 +4,7 @@ A single-page directory of free developer and design tools and resources, organi
 
 ## What this is
 
-Hextools started as a small collection of design-tool links and is being rebuilt, incrementally, into a proper resource directory: one long, data-driven page instead of a separate HTML file per category, with everything a directory like this needs — search, filtering, a real theme system, and a predictable way to add new tools without touching any markup.
+Hextools started as a hackathon project in 2023; small collection of design-tool links and is being rebuilt, incrementally, into a proper resource directory: one long, data-driven page instead of a separate HTML file per category, with everything a directory like this needs — search, filtering, a real theme system, and a predictable way to add new tools without touching any markup.
 
 There's no build step, no framework, and no package manager. It's plain HTML, CSS, and vanilla JavaScript on purpose — the project is meant to stay simple enough that adding a tool or a feature never requires more than editing a couple of files.
 
@@ -116,5 +116,11 @@ The rebuild followed a day-by-day plan, from an initial audit of the original (m
 What's next, roughly in priority order: more categories and tools (added one at a time), tag-based filtering, favorites/bookmarks, per-tool icons, sorting, and a moderated public "suggest a tool" flow.
 
 ## Credits
+Mohammed Abid Ali Sameer
+Habib Ayan Aziz Khan
+Shaikh Shoaib Sheriff
+Syed Faizan Ahmed
 
 Built by [HEXAGON](https://github.com/JustAbid/HEXAGON).
+
+
