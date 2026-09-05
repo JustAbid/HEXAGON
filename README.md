@@ -116,9 +116,9 @@ The rebuild followed a day-by-day plan, from an initial audit of the original (m
 What's next, roughly in priority order: more categories and tools (added one at a time), tag-based filtering, favorites/bookmarks, per-tool icons, sorting, and a moderated public "suggest a tool" flow.
 
 ## Credits
-Mohammed Abid Ali Sameer
-Habib Ayan Aziz Khan
-Shaikh Shoaib Sheriff
+Mohammed Abid Ali Sameer,
+Habib Ayan Aziz Khan,
+Shaikh Shoaib Sheriff,
 Syed Faizan Ahmed
 
 Built by [HEXAGON](https://github.com/JustAbid/HEXAGON).
